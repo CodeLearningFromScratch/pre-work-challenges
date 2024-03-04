@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="barcelona coding challenges css/barcelona-coding-challenges.css">
+    <script src="barcelona-coding-challenges.js" defer></script>
+    <title>BCS Challenges</title>
+    <!-- created by CodeLearningFromScratch -->
+</head>
+<body>
+
+<!--aside left navigation-->
+<aside class="test-aside"></aside>
+
+<!--created by -->
+<a class="created-by" href="https://github.com/CodeLearningFromScratch?tab=repositories">created by CodeLearningFromScratch &#8594; </a>
+
+<section class="section-test-grid">
+    <div class="all-grids-wrapper">
+
+        <section id="el1">
+            <div class="element__left">
+                <h2>calc.js</h2>
+                <p>   Write a function called calc that takes 3 arguments the first 2 are numbers and the third is an arithmetic operator, so it is either + , -, *, /
+                    <br>
+                     and it executes the appropriate operation according to the provided arithmetic operator.
+                     <br>
+                     <br>
+                     Make sure you test your function with all 4 arithmetic operations.
+                     <br>
+                     <br>
+                     In case the third arguments is  / or * and the second argument is not provided, the second argument should default to one.
+                     <br>
+                     <br>
+                     In case the third arguments is +  or  - and the second argument is not provided, the second argument should default to zero.
+                     <br>
+                     <br>
+                     Example:
+                     <br>
+                     <pre>
+   calc(10,5,'+') //15
+   calc(10,"/")   //10
+   calc (30,"*")  //30
+   calc (2,"+")   //2
+   calc (3,"-")   //3
+                     </pre>
+                </p>
+            </div>
+
+
+            <div class="element__right">
+                <pre> 
+                    function calc() {
+                        let num1 = arguments[0];
+                        let num2 = arguments[1];
+                        let operator = arguments[2];
+                        let operatorArr = ['*', '/', '+', '-'];
+                
+                        if (!isNaN(num1)) {
+                            if (!isNaN(num2)) {
+                                if (!operatorArr.includes(operator)) {
+                                    return 'wrong operator';
+                                }
+                                else {
+                                }
+                            }
+                            else if (!num2.includes(operator)) {
+                                operator = num2;
+                                num2 = operator == '*' || operator == '/' ? 1 : 0;
+                            }
+                            else {
+                                return 'wrong value';
+                            }
+                        } else {
+                            return 'not a number';
+                        }
+                
+                        if (operator == '*') return num1 * num2;
+                        else if (operator == '/') return num1 / num2;
+                        else if (operator == '+') return num1 + num2;
+                        else if (operator == '-') return num1 - num2;
+                    }
+                
+                
+                    console.log(calc(10, 5, '+'));
+                    console.log(calc(10, "/"));
+                    console.log(calc(30, "*"));
+                    console.log(calc(2, "+"));
+                    console.log(calc(3, "-"));
+                </pre>
+
+
+            </div>
+        </section>
+
+
+
+        <section id="el2">
+           <div class="element__left">
+            <h2>jenny.js</h2>
+            <p>Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+                <br>
+                <br>
+                Can you help her and fix this function ?
+                <br>
+                <br>
+                <pre>
+    function greet(name){
+        return "Hello, " + name + "!";
+        if(name === "Johnny")
+          return "Hello, my love!";
+    }
+                </pre>
+            
+            </p>
+           </div>
+           <div class="element__right">
+            <pre>
+                    function greet(name) {
+                        if (name === "Johnny")
+                            return "Hello, my love!";
+                        return "Hello, " + name + "!";
+                    }
+                    console.log(greet('Johnny'));
+                    console.log(greet('Mike'));
+
+            </pre>
+           </div>
+        </section>
+
+
+
+        <section id="el3">
+            <div class="element__left">
+                <h2>multilanguageHello.js</h2>
+                <p>
+                    Write a function which takes two argument: name and the language and it
+                    returns a personalized greeting in the selected language.
+                    <br> 
+                    If no language is provided it defaults to English.
+                    <br>
+                    <br>
+                    // english: 'Welcome',
+                    <br>
+                    // czech: 'Vitejte',
+                    <br>
+                    // danish: 'Velkomst',
+                    <br>
+                    // dutch: 'Welkom',
+                    <br>
+                    // french: 'Bienvenue',
+                    <br>
+                    // german: 'Willkommen',
+                    <br>
+                    // irish: 'Failte',
+                    <br>
+                    // italian: 'Benvenuto',
+                    <br>
+                    // spanish: 'Bienvenido',
+                    <br>
+                    // swedish: 'Valkommen'
+                    <pre> 
+   Example: 
+   <br>
+   greeting("bob", "spanish") 
+   // returns 
+   'Bienvenido, bob'
+                    </pre>
+                </p>
+            </div>
+            <div class="element__right">
+              <pre>
+                  function greeting(name, lang = 'english') {
+                      const translations = {
+                          english: 'Welcome',
+                          czech: 'Vitejte',
+                          danish: 'Velkomst',
+                          dutch: 'Welkom',
+                          french: 'Bienvenue',
+                          german: 'Willkommen',
+                          irish: 'Failte',
+                          italian: 'Benvenuto',
+                          polish: 'Witamy',
+                          spanish: 'Bienvenido',
+                          swedish: 'Valkommen'
+                      };
+                      return translations[lang] + ', ' + name;
+                   }
+            
+                    console.log(greeting("bob", "spanish"));
+
+              </pre>
+            </div>
+        </section>
+
+
+
+        <section id="el4">
+             <div class="element__left">
+                <h2>noIVA.js</h2>
+                <p>
+                 Write a function noIVA which calculates the price without IVA which is 21%
+                 <br>
+                 It takes one argument which is a number for total price with IVA
+                 and returns the number representing the price without IVA.
+                 <br>
+                 <br>
+                 // function takes 1 argument
+                 <br>
+                 // argument is a total price with IVA
+                 <br>
+                 // function subtracts iva from total price
+                 <br>
+                 // returns the price without iva
+                 <br>  
+                 <pre> 
+    noIva(242) 
+    // returns
+    200
+                 </pre>
+
+                </p>
+             </div>
+            <div class="element__right">
+                <pre>
+                    function noIva(totalPrice) {
+                        return totalPrice / 1.21;
+                    }
+                
+                    console.log(noIva(242));
+                </pre>
+
+            </div>
+        </section>
+
+
+
+        <section id="el5">
+            <div class="element__left">
+                <h2>numToString.js</h2>
+                <p> 
+                    Write a function which takes one argument which is a number and returns the same value as a string.
+                    <pre>
+    numberToString(10) 
+    // returns
+    "10" 
+                    </pre>  
+                </p>
+            </div>
+            <div class="element__right">
+
+                <pre>
+                    function numberToString(num) {
+                        return '"' + num.toString() + '"';
+                    }
+                
+                    console.log(numberToString(10)); 
+                </pre>
+            </div>
+
+        </section>
+
+
+
+        <section id="el6">
+            <div class="element__left">
+                <h2>swap.js</h2>
+                <p>
+                    Write a function called swap that takes one argument, an object, and returns another object where the key/value pairs have been swapped. The original object should not be modified.
+                    <br>
+                    <br>
+                   Example:
+                  
+                   <pre>
+    var obj = {a: 1, b: 2}
+    var newObje = swap(obj) 
+    newObje // {1: 'a', 2: 'b'}
+                   </pre>
+                </p>
+            </div>
+            <div class="element__right">
+
+             <pre>
+                var obj = { a: 1, b: 2 };
+
+                function swap(obj) {
+                    let objCopy = {};
+                    for (const key in obj) {
+                        objCopy[obj[key]] = key;
+                    }
+                    return objCopy;
+                }
+                var newObje = swap(obj);
+                console.log(newObje);
+            </pre>
+
+            </div>
+        </section>
+
+
+
+        <section id="el7">
+            <div class="element__left">
+                <h2>theOpposites.js</h2>
+                <p>
+                Write a function which returns the opposite for a provided number:
+                <br>
+                <pre>
+    oppositeNum(10) 
+    // returns
+    -10
+    oppositeNum(-5) 
+    // returns 
+    5
+                </pre>
+                </p>
+            </div>
+            <div class="element__right">
+
+           <pre>
+            function oppositeNum(num) {
+                return -num;
+            }
+        
+            console.log(oppositeNum(10));
+            console.log(oppositeNum(-5));
+
+           </pre>
+            </div>
+
+        </section>
+
+
+
+        <section id="el8">
+            <div class="element__left">
+                <h2>vendingMachine.js</h2>
+                <p>
+                Write a function called vendingMachine
+                it should take 2 arguments:
+                <br>
+                – number for the amount of money entered
+                <br>
+                – number which refers to a snack you want to buy
+                <br>
+                <br>
+                It should return 
+                <br>
+                "You -snack- has been served", instead of a -snack- it should output 
+                a name of selected snack.
+                <br>
+                <br>
+                If selected snack is not available in the vending machine it should return
+                <br>
+                "Sorry, selected snack is not available".
+                <br>
+                <br>
+                If selected snack is more expensive than the money amount given it should return
+                <br>
+                "Sorry, you have to insert more coins". 
+                <br>
+                <pre>
+    This is the content of our vending machine:
+    1. Espresso, cost: 1€
+    2. Cappuccino, cost: 2,50€
+    3. Chocolate bar, cost 2€
+    4. Potato chips, cost 3,50€
+                </pre> 
+
+                <b class="nb">! Only Coffee &rarr;</b>
+
+                </p>
+            
+            </div>
+            <div class="element__right">
+                <pre>
+                    function buyCoffee(money, coffeeType) {
+                        let coffeeName;
+                        let coffeeCost;
+                
+                        switch (coffeeType) {
+                            case 1:
+                                coffeeName = "Espresso";
+                                coffeeCost = 1;
+                                break;
+                            case 2:
+                                coffeeName = "Cappuccino";
+                                coffeeCost = 2.5;
+                                break;
+                            case 3:
+                                coffeeName = "Caffe Latte";
+                                coffeeCost = 2;
+                                break;
+                            case 4:
+                                coffeeName = "Americano";
+                                coffeeCost = 3.5;
+                                break;
+                            default:
+                                return "Sorry, selected coffee is not available"; 
+                        }
+                
+                        if (money &lt; coffeeCost) {
+                            return "Sorry, you have to insert more coins";   
+                        }
+                
+                        return `You ${coffeeName} has been served`;
+                       }
+
+                    console.log(buyCoffee(2, 1));
+                    console.log(buyCoffee(1, 3));
+                    console.log(buyCoffee(4, 5));
+                </pre>
+            </div>
+
+        </section>
+
+    </div>
+</section>
+
+</body>
+</html>
