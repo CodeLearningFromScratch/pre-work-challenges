@@ -4,7 +4,7 @@
 
 function createHeader() {
     const headerHTML = `
-        <h2 class="h2-challenge">Coding Challenge</h2>
+        <h2 class="h2-challenge">Pre_Work_Challenge</h2>
         <div class="buttons-wrapper">
              <button class="btns-header active" onclick= "scrollFunction1()"> calc.js</button>
              <button class="btns-header" onclick= "scrollFunction2()"> jenny.js</button>
